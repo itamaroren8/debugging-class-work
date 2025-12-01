@@ -4,7 +4,8 @@
 Point::Point()
 {
 	_coord = new int[2];
-	_coord[0] = _coord[1] = 0;
+	_coord[0] = 0;
+	_coord[1] = 0;
 }
 
 Point::Point(int x, int y)
@@ -16,6 +17,7 @@ Point::Point(int x, int y)
 
 Point::Point(const Point& other)
 {
+	_coord = new int[2];
 	_coord[0] = other._coord[0];
 	_coord[1] = other._coord[1];
 }
@@ -27,9 +29,9 @@ Point::~Point()
 
 Point& Point::operator=(const Point& other)
 {
-	delete _coord;
-	_coord = new int[2];
-	memcpy(_coord, other._coord, 2);
+	_coord[0] = other._coord[0];
+	_coord[1] = other._coord[1];
+
 	return *this;
 }
 
