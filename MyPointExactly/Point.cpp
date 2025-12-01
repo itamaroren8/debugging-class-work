@@ -24,7 +24,7 @@ Point::Point(const Point& other)
 
 Point::~Point()
 {
-	delete _coord;
+	delete[] _coord;
 }
 
 Point& Point::operator=(const Point& other)
